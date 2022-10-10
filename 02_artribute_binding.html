@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+        
+        .b {
+            color: green;
+        }
+        
+        .c {
+            color: blue;
+        }
+        
+        .through {
+            text-decoration: line-through;
+        }
+        
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="message" name="" id="">
+        <h1 v-bind:class="[textColor,line]"> {{ message }}</h1>
+        <h1 :class="[text,line]">{{ message }}</h1>
+        <h1 v-bind:class="blueText">{{ message }}</h1>
+        <a href="https://www.youtube.com" target="-blink"> Youtube </a>
+        <hr>
+        <a v-bind:href="myUrl" target="-blink">Youtube Second</a>
+        <hr>
+        <h1>{{ message }}</h1>
+        <hr>
+        <img :src="mySrc" alt="">
+        <span :title="myTitle">Click</span>
+        <input type="text" :disabled="status">
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    let app = new Vue({
+        el: "#app",
+        data: {
+            message: "this is testing vue",
+            textColor: "red",
+            text: "b",
+            blueText: "c",
+            line: "through",
+            myUrl: "https://www.youtube.com",
+            mySrc: "image/car.jpeg",
+            myTitle: "CODE LAB",
+            status: true,
+        }
+    })
+</script>
+
+</html>

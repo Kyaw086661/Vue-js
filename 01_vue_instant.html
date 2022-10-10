@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <h1>{{ 2+2 }}</h1>
+        <!-- template syntax output syntax =  {{  }}//{{ expression only ok and statement not work }} //{{ 1+1 }} expriession {{ let a = "hi there" }} statement -->
+        <h2>{{ message.split("").join('-') }}</h2>
+        <h1>{{ status ? "this is true" : "this is false" }}</h1>
+        <h1>{{ year + 100 }}</h1>
+        <h2>{{ age + 20 }}</h2>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: " this is testing message",
+            status: false,
+            year: 2020,
+            age: 20,
+        }
+    })
+</script>
+
+</html>

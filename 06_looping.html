@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="testing">
+        <input type="text" name="" id="" v-model="message">
+        <h1>Looping</h1>
+        <ul>
+            <li v-for="item in numbers">{{ item }}</li>
+            <li v-for="(item,index) in numbers">{{ index }} | {{ item }}</li>
+            <li v-for="item in people">{{ item.name }}</li>
+            <table border=".5">
+        </ul>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+        </tr>
+        <tr v-for="items in people">
+            <td>{{ items.id }}</td>
+            <td>{{ items.name }}</td>
+            <td>{{ items.gender }}</td>
+        </tr>
+        </table>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    let app = new Vue({
+        el: '.testing',
+        data: {
+            message: "looping testing",
+            numbers: ['one', 'two', 'three', 'four'],
+            people: [{
+                    id: "1",
+                    name: "kyaw kyaw",
+                    gender: "male"
+                }, {
+                    id: "2",
+                    name: "tun tun",
+                    gender: "male"
+                }, {
+                    id: "3",
+                    name: "may may",
+                    gender: "female"
+                }, {
+                    id: "1",
+                    name: "kyi kyi",
+                    gender: "female"
+                }
+
+            ]
+        },
+    })
+</script>
+
+</html>

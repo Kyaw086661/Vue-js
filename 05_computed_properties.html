@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="testing">
+        <h1>{{ getLength }}</h1>
+        <button @click="send()">Send</button>
+        <h1>{{ message }}</h1>
+        <h1>{{ reverse }}</h1>
+        <h1>{{ now }}</h1>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    let test = new Vue({
+        el: '.testing',
+        data: {
+            message: 'hello vue',
+        },
+
+        // computed property need to return not a function
+        computed: {
+            getLength() {
+                return this.message.length;
+            },
+            reverse() {
+                // return this.message.split("").reverse().join("")
+                let newMessage = this.message.split("");
+                let reverse = newMessage.reverse();
+                let response = reverse.join("");
+                return response;
+            },
+            now() {
+                return Date.now();
+            }
+
+        },
+        methods: {
+            send() {
+                alert(this.message.length);
+            }
+        },
+    })
+</script>
+
+</html>

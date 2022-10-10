@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+        <h1>{{ message }}</h1>
+        <h2 v-if="status==true">HELLO VUE JS</h2>
+        <h2 v-else>I'm False State</h2>
+        <hr>
+        <h3 v-if="fruits=='apple'">I'm apple</h3>
+        <h3 v-else-if="fruits=='orange'">I'm orange</h3>
+        <h3 v-else-if="fruits=='banana'">I'm banana</h3>
+        <h3 v-else>There's no fruits</h3>
+        <hr>
+        <h1 v-show="status">OK</h1>
+
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    let app = new Vue({
+        el: ".app",
+        data: {
+            message: "hello world",
+            status: true,
+            fruits: 'apple',
+
+        }
+    })
+</script>
+
+</html>
